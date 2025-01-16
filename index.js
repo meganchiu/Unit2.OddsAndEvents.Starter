@@ -23,6 +23,14 @@ function addNumber(event) {
   render();
 }
 
+  // Random Number Button Functionality - Generate a random number  for the number bank
+  const buttonRandom = document.querySelector('#rand');
+  buttonRandom.addEventListener('click', function() {
+    let randomNumber = Math.floor(Math.random() * 1000001);
+    const textBoxNumber = document.querySelector('#number');
+    textBoxNumber.value = randomNumber;
+  });
+
 // Sort 1 Fuctionality - Sort first number into odd or even section
 const buttonSortOne = document.querySelector('#sortOne');
 buttonSortOne.addEventListener('click', () => {
