@@ -26,7 +26,10 @@ function addNumber(event) {
 // Sort 1 Fuctionality - Sort first number into odd or even section
 const buttonSortOne = document.querySelector('#sortOne');
 buttonSortOne.addEventListener('click', () => {
+  // First remove number from number bank
   let firstNumber = state.numberBank.shift();
+
+  // Then sort into even or odd
   if (firstNumber % 2 === 0) {
     state.even.push(firstNumber);
   } else {
@@ -35,6 +38,24 @@ buttonSortOne.addEventListener('click', () => {
   // Re render once number is sorted
   render();
 })
+
+// Sort all functionality - Sort all numbers into odd or even section
+const buttonSortAll = document.querySelector('#sortAll');
+buttonSortAll.addEventListener('click', () => {
+  // Starting backwards in the number bank array
+  for (let i=state.numberBank.length-1; i>=0; i--) {
+    // First remove number from number bank
+    let num = state.numberBank.pop();
+    // Then sort into even or odd
+    if (num % 2 === 0) {
+      state.even.push(num);
+    } else {
+      state.odd.push(num);
+    }
+  }
+  // Re render once numbers are sorted
+  render();
+});
 
 // Render numbers to the numbers bank
 function renderNumbersToNumbersBank() {
