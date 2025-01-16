@@ -9,3 +9,8 @@ output {
   border: 1px solid black;
   border-radius: 3px;
 }
+
+span {
+  border: 1px solid red;
+  margin: 2px;
+}
